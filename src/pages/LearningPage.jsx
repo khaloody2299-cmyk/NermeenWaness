@@ -93,16 +93,7 @@ function LearningPage() {
     <div style={{ backgroundColor: 'var(--edu-bg)', minHeight: '100vh', width: '100%' }}>
       
       {/* Header (Navbar) */}
-      <header style={{ 
-        position: 'sticky', top: 0, zIndex: 100,
-        padding: '15px 60px', 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center',
-        background: 'var(--edu-surface)',
-        borderBottom: '1px solid var(--edu-border)',
-        boxShadow: 'var(--shadow-sm)'
-      }}>
+      <header className="main-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', flex: 1 }} onClick={() => navigate('/')}>
           <div style={{ 
             background: 'var(--edu-primary)', 
@@ -120,7 +111,7 @@ function LearningPage() {
             قواعد البيانات الخلفية للويب
           </h2>
         </div>
-        <nav style={{ display: 'flex', gap: '30px', flex: 1, justifyContent: 'center' }}>
+        <nav className="main-header-nav">
           <Link to="/" style={{ textDecoration: 'none', color: 'var(--edu-text-body)', fontWeight: '600', fontSize: '1rem', transition: 'color 0.2s' }}>الرئيسية</Link>
           <a href="/#features" style={{ textDecoration: 'none', color: 'var(--edu-text-body)', fontWeight: '600', fontSize: '1rem', transition: 'color 0.2s' }}>المميزات</a>
           <Link to="/learning" style={{ textDecoration: 'none', color: 'var(--edu-primary)', fontWeight: '800', fontSize: '1rem', transition: 'color 0.2s' }}>الدروس</Link>
@@ -131,17 +122,10 @@ function LearningPage() {
       </header>
 
       {/* Main Container - RTL Grid Layout */}
-      <div style={{ 
-        maxWidth: '1400px', 
-        margin: '0 auto', 
-        display: 'flex', 
-        gap: '40px', 
-        padding: '40px 20px', 
-        alignItems: 'flex-start' 
-      }}>
+      <div className="learning-layout">
         
         {/* 1. Main Content Area (On the RIGHT due to DOM order + RTL) */}
-        <main style={{ flex: 1, minWidth: 0, paddingBottom: '100px' }}>
+        <main className="learning-content">
           
           {/* Lesson Header */}
           <div style={{ 
@@ -158,7 +142,7 @@ function LearningPage() {
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255, 255, 255, 0.1)', color: 'white', padding: '6px 16px', borderRadius: '50px', fontWeight: '800', marginBottom: '16px', fontSize: '0.95rem', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(5px)' }}>
                 الدرس {arabicNumbers[activeLessonIndex] || (activeLessonIndex + 1)}
               </div>
-              <h1 style={{ fontSize: '2.5rem', color: 'white', fontWeight: '900', margin: '0', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+              <h1 className="lesson-header-title">
                 {activeLesson?.title}
               </h1>
             </div>
@@ -328,19 +312,7 @@ function LearningPage() {
         </main>
 
         {/* 2. Left Sidebar (Index) - On the LEFT due to DOM order + RTL */}
-        <aside style={{ 
-          width: '320px', 
-          flexShrink: 0, 
-          position: 'sticky', 
-          top: '90px', 
-          background: 'var(--edu-surface)',
-          borderRadius: '16px',
-          padding: '24px',
-          border: '1px solid var(--edu-border)',
-          boxShadow: 'var(--shadow-sm)',
-          height: 'calc(100vh - 110px)',
-          overflowY: 'auto'
-        }}>
+        <aside className="learning-sidebar">
           <h3 style={{ fontSize: '1.2rem', color: 'var(--edu-text-main)', margin: '0 0 20px 0', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Book size={20} color="var(--edu-text-muted)" />
             فهرس الدروس

@@ -167,3 +167,112 @@ button, input, select, textarea {
   border: 1px solid var(--edu-border);
   box-shadow: var(--shadow-sm);
 }
+
+/* Responsive Layout Classes */
+.main-header {
+  position: sticky; top: 0; z-index: 100;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--edu-surface);
+  border-bottom: 1px solid var(--edu-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.main-header-nav {
+  display: flex; gap: 30px; flex: 1; justify-content: center;
+}
+
+.learning-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding: 40px 20px;
+  align-items: flex-start;
+}
+
+.learning-content {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 100px;
+}
+
+.learning-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 90px;
+  background: var(--edu-surface);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--edu-border);
+  box-shadow: var(--shadow-sm);
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.lesson-header-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  .main-header-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .learning-layout {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+  .learning-sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+    max-height: 400px;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lesson-header-title {
+    font-size: 1.8rem;
+  }
+  .markdown-body {
+    padding: 20px !important;
+  }
+  .markdown-body h1 { font-size: 1.8rem; }
+  .markdown-body h2 { font-size: 1.5rem; }
+}

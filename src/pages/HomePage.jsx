@@ -8,16 +8,7 @@ function HomePage() {
     <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
       
       {/* Navbar */}
-      <header style={{ 
-        position: 'sticky', top: 0, zIndex: 100,
-        padding: '15px 60px', 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center',
-        background: 'var(--edu-surface)',
-        borderBottom: '1px solid var(--edu-border)',
-        boxShadow: 'var(--shadow-sm)'
-      }}>
+      <header className="main-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
           <div style={{ 
             background: 'var(--edu-primary)', 
@@ -35,7 +26,7 @@ function HomePage() {
             قواعد البيانات الخلفية للويب
           </h2>
         </div>
-        <nav style={{ display: 'flex', gap: '30px', flex: 1, justifyContent: 'center' }}>
+        <nav className="main-header-nav">
           <Link to="/" style={{ textDecoration: 'none', color: 'var(--edu-primary)', fontWeight: '800', fontSize: '1rem', transition: 'color 0.2s' }}>الرئيسية</Link>
           <a href="/#features" style={{ textDecoration: 'none', color: 'var(--edu-text-body)', fontWeight: '600', fontSize: '1rem', transition: 'color 0.2s' }}>المميزات</a>
           <Link to="/learning" style={{ textDecoration: 'none', color: 'var(--edu-text-body)', fontWeight: '600', fontSize: '1rem', transition: 'color 0.2s' }}>الدروس</Link>
@@ -54,11 +45,11 @@ function HomePage() {
         position: 'relative'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <h1 style={{ fontSize: '2.2rem', color: 'white', fontWeight: '900', lineHeight: '1.4', marginBottom: '40px', textShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
+          <h1 className="hero-title">
             تعلم البرمجة وقواعد البيانات <br/> 
             <span style={{ color: '#60a5fa' }}>بأسلوب عصري ومبسط</span>
           </h1>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <div className="hero-buttons">
             <Link to="/learning" style={{ textDecoration: 'none' }}>
               <button className="btn-primary" style={{ padding: '14px 32px', fontSize: '1.1rem', boxShadow: '0 10px 25px rgba(37, 99, 235, 0.5)' }}>
                 ابدأ رحلة التعلم <ArrowLeft size={18} />
